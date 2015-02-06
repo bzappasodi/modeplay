@@ -2,15 +2,12 @@ package com.billyzapp.modeplay;
 
 import java.util.Scanner;
 
-/**
- *  @Param sc
- *  getThecurrentMode
- */
+
 public class CurrentMode {
     public static int getValidMode(Scanner sc) {
         int mode = 0;
         boolean isValid = false;
-        while (isValid == false) {
+        while (!isValid) {
             System.out.println("Enter mode");
             System.out.println("1) Dorian");
             System.out.println("2) Ionian");
