@@ -12,7 +12,7 @@ public class CurrentKey {
         String[] validKeys = {"A", "B", "C", "D", "E", "F", "G"};
         List<String> list = Arrays.asList(validKeys);
 
-        while (isValid == false) {
+        while (!isValid) {
             System.out.println(prompt);
             selectedKey = sc.next();
             if (selectedKey != null) {

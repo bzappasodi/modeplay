@@ -5,8 +5,7 @@ import java.util.Scanner;
 /**
  * Main method to start the program
  * * @param validKeys list of valid musical keys
- * @param mode stores the mode chosen by the user
- * @param key stores the key the user entered
+
  *
  */
 public class Modes {
