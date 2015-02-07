@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 /**
  * Main method to start the program
- * * @param validKeys list of valid musical keys
-
  *
  */
 public class Modes {
