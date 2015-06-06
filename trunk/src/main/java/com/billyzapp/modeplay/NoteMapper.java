@@ -8,7 +8,7 @@ package com.billyzapp.modeplay;
  */
 public class NoteMapper {
 
-    String note;
+    //String note;
 
     static int mapNoteNumbers(String note) {
         int noteInt = 0;
