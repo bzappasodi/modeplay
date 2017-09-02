@@ -1,6 +1,8 @@
 
 package com.billyzapp.modeplay;
 
+import java.util.*;
+
 /**
  * @param note    the note selected
  * @param noteInt the note to midi note number conversion
@@ -8,39 +10,33 @@ package com.billyzapp.modeplay;
  */
 public class NoteMapper {
 
-    //String note;
-
     static int mapNoteNumbers(String note) {
-        int noteInt = 0;
+        Integer value = 0;
+        Map<String, Integer> lhm = new HashMap();
+        lhm.put("A", 45);
+        lhm.put("B", 47);
+        lhm.put("C", 48);
+        lhm.put("D", 50);
+        lhm.put("E", 52);
+        lhm.put("F", 53);
+        lhm.put("G", 43);
 
-        if (note.equals("C")) {
-            noteInt = 48;
+        // Get a set of the entries
+        Set set = lhm.entrySet();
+
+        // Get an iterator
+        Iterator i = set.iterator();
+
+        // Display elements
+        while (i.hasNext()) {
+            Map.Entry me = (Map.Entry) i.next();
+            if (me.getKey().equals(note)) {
+                value = (Integer) me.getValue();
+            }
         }
 
-        if (note.equals("D")) {
-            noteInt = 50;
-        }
 
-        if (note.equals("E")) {
-            noteInt = 52;
-        }
+        return value;
 
-        if (note.equals("F")) {
-            noteInt = 53;
-        }
-
-        if (note.equals("G")) {
-            noteInt = 43;
-        }
-
-        if (note.equals("A")) {
-            noteInt = 45;
-        }
-
-        if (note.equals("B")) {
-            noteInt = 47;
-        }
-
-        return noteInt;
     }
 }

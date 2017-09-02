@@ -21,9 +21,6 @@ public class PlayDorian {
         }
     }
 
-    @Override
-    public String toString() {
-        return "total Note " + totalNote;
-    }
+
 
 }
