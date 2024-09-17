@@ -18,7 +18,7 @@ public class PlayPhrygian {
         totalNote = mapNoteNumbers;
 
         for (int element : phrygianIntervals) {
-            ply.PlayMidi(25, (totalNote + element));
+            ply.playMidi(25, (totalNote + element));
 
         }
     }

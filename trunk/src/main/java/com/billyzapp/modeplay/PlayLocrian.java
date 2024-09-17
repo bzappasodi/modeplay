@@ -21,7 +21,7 @@ public class PlayLocrian {
         totalNote = mapNoteNumbers;
 
         for (int element : locrianIntervals) {
-            ply.PlayMidi(25, (totalNote + element));
+            ply.playMidi(25, (totalNote + element));
 
         }
     }

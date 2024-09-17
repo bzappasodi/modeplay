@@ -21,7 +21,8 @@ public class PlayLydian {
         totalNote = mapNoteNumbers;
 
         for (int element : lydianIntervals) {
-            ply.PlayMidi(25, (totalNote + element));
+            ply.playMidi(25, (totalNote + element));
+
 
         }
     }

@@ -21,8 +21,7 @@ public class PlayMixolydian {
         totalNote = mapNoteNumbers;
 
         for (int element : mixolydianIntervals) {
-            ply.PlayMidi(25, (totalNote + element));
-
+            ply.playMidi(25, (totalNote + element));
         }
     }
 }
