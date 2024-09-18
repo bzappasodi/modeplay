@@ -1,19 +1,21 @@
-
 package com.billyzapp.modeplay;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static com.billyzapp.modeplay.Constants.MIDI_CHANNEL;
 
 public class PlayAeolian {
     public void playIt(String key) {
 
-        Play ply = new Play();
+        Play player = new Play();
 
-        Integer[] aeolianIntervals = {
-                7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31
-        };
+        List<Integer> aeolianIntervals = Arrays.asList(7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31);
 
+        int baseNote = NoteMapper.mapNoteNumbers(key);
 
-        for (int element : aeolianIntervals) {
-            ply.playMidi(25, (NoteMapper.mapNoteNumbers(key) + element));
+        for (int interval : aeolianIntervals) {
+            player.playMidi(MIDI_CHANNEL, baseNote + interval);
 
 
         }

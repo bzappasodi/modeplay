@@ -1,20 +1,22 @@
-
-
 package com.billyzapp.modeplay;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static com.billyzapp.modeplay.Constants.MIDI_CHANNEL;
 
 public class PlayPhrygian {
     public void playIt(String key) {
 
-        Play ply = new Play();
+        Play player = new Play();
 
-        Integer[] phrygianIntervals = {
-                4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28
-        };
+        List<Integer> phrygianIntervals = Arrays.asList(4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28);
 
 
-        for (int element : phrygianIntervals) {
-            ply.playMidi(25, (NoteMapper.mapNoteNumbers(key) + element));
+        int baseNote = NoteMapper.mapNoteNumbers(key);
+
+        for (int interval : phrygianIntervals) {
+            player.playMidi(MIDI_CHANNEL, baseNote + interval);
 
         }
     }
