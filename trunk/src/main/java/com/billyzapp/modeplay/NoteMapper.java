@@ -1,42 +1,26 @@
 
 package com.billyzapp.modeplay;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- * @param note    the note selected
- * @param noteInt the note to midi note number conversion
- * @author Zapp c dorian is DEFGABC c:12 d:14 e:16 f:17 g:19 a:21 b:23\
- */
 public class NoteMapper {
 
-    static int mapNoteNumbers(String note) {
-        Integer value = 0;
-        Map<String, Integer> lhm = new HashMap();
-        lhm.put("A", 45);
-        lhm.put("B", 47);
-        lhm.put("C", 48);
-        lhm.put("D", 50);
-        lhm.put("E", 52);
-        lhm.put("F", 53);
-        lhm.put("G", 43);
+    private static final Map<String, Integer> noteMap = new HashMap<>();
 
-        // Get a set of the entries
-        Set set = lhm.entrySet();
+    // Static block to initialize the note map once
+    static {
+        noteMap.put("A", 45);
+        noteMap.put("B", 47);
+        noteMap.put("C", 48);
+        noteMap.put("D", 50);
+        noteMap.put("E", 52);
+        noteMap.put("F", 53);
+        noteMap.put("G", 43);
+    }
 
-        // Get an iterator
-        Iterator i = set.iterator();
-
-        // Display elements
-        while (i.hasNext()) {
-            Map.Entry me = (Map.Entry) i.next();
-            if (me.getKey().equals(note)) {
-                value = (Integer) me.getValue();
-            }
-        }
-
-
-        return value;
-
+    // Method to map note strings to their corresponding integer values
+    public static int mapNoteNumbers(String note) {
+        return noteMap.getOrDefault(note, 0);
     }
 }
